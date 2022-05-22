@@ -9,8 +9,8 @@ class CartItemModel{
   String? name;
   String? description;
   IconData? iconData;
-  // CustomCounterCartItem? counter;
+  CustomCounterCartItem? counter;
 
-  CartItemModel(this.image , this.name, this.description, this.iconData);
+  CartItemModel(this.image , this.name, this.description, this.iconData,this.counter);
 
 }

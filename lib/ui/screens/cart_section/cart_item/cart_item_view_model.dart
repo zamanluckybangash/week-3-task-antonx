@@ -8,28 +8,32 @@ import '../../../custom_widgets/custom_counter_cart_items.dart';
 
 class CartItemViewModel extends ChangeNotifier{
 
-  CartItemModel _image = CartItemModel( null,null,null,null);
-  CartItemModel _name = CartItemModel( null,null,null,null);
-  CartItemModel _description = CartItemModel( null,null,null,null);
-  CartItemModel _iconData = CartItemModel( null,null,null,null);
-  // CartItem _counter = CartItem( null,null,null,null,null);
+  CartItemModel _image = CartItemModel( null,null,null,null,null);
+  CartItemModel _name = CartItemModel( null,null,null,null,null);
+  CartItemModel _description = CartItemModel( null,null,null,null,null);
+  CartItemModel _iconData = CartItemModel( null,null,null,null,null);
+  CartItemModel _counter = CartItemModel( null,null,null,null,null);
 
   //setter
   void setImage(Image? imageValue,){
-    _image = CartItemModel(imageValue, null, null, null);
+    _image = CartItemModel(imageValue, null, null, null,null);
+    notifyListeners();
   }
   void setName(String? nameValue,){
-    _name = CartItemModel(null, nameValue, null, null);
+    _name = CartItemModel(null, nameValue, null, null,null);
+    notifyListeners();
   }
   void setDescription(String? descriptionValue,){
-    _description = CartItemModel(null, null, descriptionValue,  null);
+    _description = CartItemModel(null, null, descriptionValue,null,  null);
+    notifyListeners();
   }
   void setIconData(IconData? iconDataValue,){
-    _iconData = CartItemModel(null, null, null, iconDataValue);
+    _iconData = CartItemModel(null, null, null, iconDataValue,null);
+    notifyListeners();
   }
-  // void setCounter(CustomCounterCartItem? counterValue,){
-  //   _counter = CartItem(null, null, null, null, counterValue);
-  // }
+  void setCounter(CustomCounterCartItem? counterValue,){
+    _counter = CartItemModel(null, null, null, null, counterValue);
+  }
 
   //getter
   CartItemModel get getImage{
@@ -44,8 +48,8 @@ class CartItemViewModel extends ChangeNotifier{
   CartItemModel get getIconData{
     return _iconData;
   }
-  // CartItem get getCounter{
-  //   return _counter;
-  // }
+  CartItemModel get getCounter{
+    return _counter;
+  }
 
 }

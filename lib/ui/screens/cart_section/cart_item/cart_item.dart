@@ -1,4 +1,6 @@
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:week_3_task_2_antonx/ui/screens/cart_section/cart_item/cart_item_view_model.dart';
@@ -30,7 +32,7 @@ class CartItem extends StatelessWidget {
                       color: smallFlowerbackgroundColor,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Image.asset(model.getImage.toString()),
+                    child: model.getImage.image,
                   ),
                   Padding(
                     padding:  EdgeInsets.only(left: 7.0,top: 17),
@@ -56,7 +58,8 @@ class CartItem extends StatelessWidget {
                             ),
                           ),
                         ),
-                        CustomCounterCartItem()
+                       // CustomCounterCartItem()
+                        Container(child: model.getCounter.counter)
                       ],
                     ),
                   ),
