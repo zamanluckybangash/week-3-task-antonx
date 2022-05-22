@@ -13,4 +13,6 @@ class Plant{
   String? description;
   IconData? iconData;
   CustomCounterCartItem? counter;
+
+  Plant(this.image , this.name, this.description, this.iconData, this.counter);
 }
