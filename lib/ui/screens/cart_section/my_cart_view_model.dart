@@ -1,10 +1,10 @@
 
-
 import 'package:week_3_task_2_antonx/core/view_models/base_view_model.dart';
 
 import '../../custom_widgets/custom_cart_items.dart';
 
 class MyCartViewModel extends BaseViewModel{
+
   List<CustomCartItem> cartList =[];
 
   void add(CustomCartItem index){
