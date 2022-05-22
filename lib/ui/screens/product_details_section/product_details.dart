@@ -1,11 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:week_3_task_2_antonx/ui/screens/cart_section/cart_item/cart_item_view_model.dart';
 import 'package:week_3_task_2_antonx/ui/screens/cart_section/my_cart/my_cart_view_model.dart';
 import '../../../core/constant/colors.dart';
-import '../../../core/view_models/base_view_model.dart';
-import '../../custom_widgets/custom_cart_badge.dart';
-import '../../custom_widgets/custom_cart_items.dart';
 import '../../custom_widgets/custom_counter.dart';
+import '../cart_section/cart_item/cart_item.dart';
 
 class ProductDetail extends StatelessWidget {
 
@@ -293,9 +293,13 @@ class ProductDetail extends StatelessWidget {
                                             padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15))
                                         ),
                                         onPressed: (){
-                                          //Provider.of<BaseViewModel>(context, listen: false).add(CustomCartItem());
-                                         // Provider.of<BaseViewModel>(context, listen: false).increment();
-                                          myCartViewModel.add(CustomCartItem());
+                                          Provider.of<CartItemViewModel>(context,listen: false).setImage(Image.asset("'assets/kondol5.png'"));
+                                          Provider.of<CartItemViewModel>(context,listen: false).setName('Monstera');
+                                          Provider.of<CartItemViewModel>(context,listen: false).setDescription('its Spines don\'t grow');
+                                          Provider.of<CartItemViewModel>(context,listen: false).setIconData(Icons.more_vert_sharp);
+                                          //Provider.of<CartItemViewModel>(context,listen: false).setCounter(CustomCounterCartItem());
+
+                                          myCartViewModel.add(CartItem());
                                         },
                                         child:  Row(
                                           mainAxisAlignment: MainAxisAlignment.center,

@@ -1,13 +1,13 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:week_3_task_2_antonx/core/view_models/base_view_model.dart';
+import '../cart_item/cart_item.dart';
 
-import '../../../custom_widgets/custom_cart_items.dart';
+class MyCartViewModel extends ChangeNotifier{
 
-class MyCartViewModel extends BaseViewModel{
+  List<CartItem> cartList =[];
 
-  List<CustomCartItem> cartList =[];
-
-  void add(CustomCartItem index){
+  void add(CartItem index){
     cartList.add(index);
     notifyListeners();
   }
