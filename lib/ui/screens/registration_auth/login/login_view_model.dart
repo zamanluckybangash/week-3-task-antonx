@@ -1,9 +1,10 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:week_3_task_2_antonx/core/models/login_user.dart';
 import 'package:week_3_task_2_antonx/core/view_models/base_view_model.dart';
 import '../../../../core/models/login_user.dart';
 
-class LoginViewModel extends BaseViewModel{
+class LoginViewModel extends ChangeNotifier{
 
    LoginUser _name = LoginUser( null, null,);
    LoginUser _password = LoginUser( null,  null,);

@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:week_3_task_2_antonx/core/view_models/base_view_model.dart';
 
 import '../../core/constant/colors.dart';
-import '../screens/cart_section/my_cart_view_model.dart';
+import '../screens/cart_section/my_cart/my_cart_view_model.dart';
 
 class  CustomCounterCartItem extends StatelessWidget {
 
