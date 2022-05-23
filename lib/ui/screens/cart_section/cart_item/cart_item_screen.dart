@@ -30,7 +30,7 @@ class CartItemScreen extends StatelessWidget {
                       color: smallFlowerbackgroundColor,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: model.getImage.image,
+                    child: Image.asset(model.getImage.image.toString()),
                   ),
                   Padding(
                     padding:  EdgeInsets.only(left: 7.0,top: 17),
@@ -40,7 +40,7 @@ class CartItemScreen extends StatelessWidget {
                          Padding(
                           padding: const EdgeInsets.only(left: 8.0),
                           child: Text(model.getName.name.toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: darkGreenTextColor,
                                 fontWeight: FontWeight.w700
                             ),

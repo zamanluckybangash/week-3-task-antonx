@@ -3,18 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:week_3_task_2_antonx/ui/screens/cart_section/cart_item/cart_item_view_model.dart';
 import 'package:week_3_task_2_antonx/ui/screens/cart_section/my_cart/my_cart_view_model.dart';
+import 'package:week_3_task_2_antonx/ui/screens/home/home_screen_view_model.dart';
 import '../../../core/constant/colors.dart';
+import '../../../core/models/plant.dart';
 import '../../custom_widgets/custom_counter.dart';
 import '../../custom_widgets/custom_counter_cart_items.dart';
 import '../cart_section/cart_item/cart_item_screen.dart';
 
 class ProductDetail extends StatelessWidget {
 
-  //var showCart = const ShowCart();
+  Plant? plant;
+  String? id;
+
+  ProductDetail({this.plant, this.id});
+
 
   @override
   Widget build(BuildContext context) {
     MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
+    final findId = Provider.of<HomeScreenViewModel>(context).findById(id);
     return  Material(
       child:  Container(
         color: curveColor,
@@ -29,7 +36,7 @@ class ProductDetail extends StatelessWidget {
                 //padding: EdgeInsets.all(8),
                 height: 330,
                 width: 220,
-                child: Image.asset("assets/kondol5.png",),
+                child: Image.asset("${findId.imageUrl}",),
                 // color: Colors.blue,
               ),
             ),
@@ -294,7 +301,7 @@ class ProductDetail extends StatelessWidget {
                                             padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15))
                                         ),
                                         onPressed: (){
-                                          Provider.of<CartItemViewModel>(context,listen: false).setImage(Image.asset("assets/kondol5.png"));
+                                          Provider.of<CartItemViewModel>(context,listen: false).setImage(("assets/kondol5.png"));
                                           Provider.of<CartItemViewModel>(context,listen: false).setName('Monstera');
                                           Provider.of<CartItemViewModel>(context,listen: false).setDescription('its Spines don\'t grow');
                                           Provider.of<CartItemViewModel>(context,listen: false).setIconData(Icons.more_vert_sharp);

@@ -15,7 +15,7 @@ class CartItemViewModel extends ChangeNotifier{
   CartItem _counter = CartItem( null,null,null,null,null);
 
   //setter
-  void setImage(Image? imageValue,){
+  void setImage(String? imageValue,){
     _image = CartItem(imageValue, null, null, null,null);
     notifyListeners();
   }

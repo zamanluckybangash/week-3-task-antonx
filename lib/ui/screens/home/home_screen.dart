@@ -66,7 +66,9 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 20,),
                 Container(
                     height: 320,
-                    child: CustomTabBar()
+                    child: CustomTabBar(
+
+                    )
                 ),
                 const SizedBox(height: 10,),
                 const Text('Recent viewed',

@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import '../../ui/custom_widgets/custom_counter_cart_items.dart';
 
 class CartItem{
-  Image? image;
+  String? image;
   String? name;
   String? description;
   IconData? iconData;
