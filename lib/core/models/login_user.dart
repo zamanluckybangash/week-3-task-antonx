@@ -2,6 +2,6 @@
 class LoginUser {
 
   String? name;
-  //String? error;
-  LoginUser(this.name);
+  String? password;
+  LoginUser(this.name, this.password);
 }

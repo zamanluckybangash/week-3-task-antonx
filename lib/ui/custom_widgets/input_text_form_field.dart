@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:week_3_task_2_antonx/ui/screens/registration_auth/login/login_view_model.dart';
 import '../../core/constant/colors.dart';
 
 class InputTextFormField extends StatelessWidget {
@@ -15,15 +17,19 @@ class InputTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  TextFormField(
-      validator: (String? value){
-        if(value==null || value.isEmpty){
-          return 'please enter value';
-        }
-        else{
-          return null;
-        }
-      },
+    return  Consumer<LoginViewModel>(builder: (context, model, child){
+      return TextFormField(
+        validator: (String? value){
+          if(model.getName.name==null || model.getName.name!.isEmpty
+          || model.getPassword.password==null || model.getPassword.password!.isEmpty
+          )
+          {
+            return 'please enter value';
+          }
+          else{
+            return null;
+          }
+        },
         obscureText: isPasswordActive,
         onChanged: onChanged,
         decoration: InputDecoration(
@@ -47,5 +53,7 @@ class InputTextFormField extends StatelessWidget {
             contentPadding: const EdgeInsets.symmetric(vertical: 10)
         ),
       );
+    }
+    );
   }
 }

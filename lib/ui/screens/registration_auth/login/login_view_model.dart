@@ -5,17 +5,17 @@ import '../../../../core/models/login_user.dart';
 
 class LoginViewModel extends ChangeNotifier{
 
-   LoginUser _name = LoginUser( null);
-   LoginUser _password = LoginUser( null);
+   LoginUser _name = LoginUser( null,null);
+   LoginUser _password = LoginUser( null,null);
 
    // setter
 
    void changeName(String value){
-     _name=LoginUser(value);
+     _name=LoginUser(value,null);
      notifyListeners();
    }
    void changePassword(String value){
-     _password=LoginUser(value);
+     _password=LoginUser(null,value);
      notifyListeners();
    }
 
