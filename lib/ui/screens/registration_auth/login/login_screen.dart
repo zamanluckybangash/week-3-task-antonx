@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
 
-    final loginViewModel = Provider.of<LoginViewModel>(context);
+    //final loginViewModel = Provider.of<LoginViewModel>(context);
 
     return  Material(
       child: SingleChildScrollView(
@@ -78,11 +78,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.only(top: 40,left: 15,right: 15),
                     child: InputTextFormField(
                       hintText: "Full name",
-                      errorText: loginViewModel.getName.error,
+                      //errorText: loginViewModel.getName.error,
                       icon: Icons.account_circle,
                       iconColor: darkGreenTextColor,
                       onChanged: (String value){
-                        loginViewModel.changeName(value);
+                        //loginViewModel.changeName(value);
+                        Provider.of<LoginViewModel>(context,listen: false).changeName(value);
                       },
                     ),
                   ),
@@ -90,12 +91,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.only(top: 15,left: 15,right: 15),
                     child: InputTextFormField(
                       hintText: 'password',
-                      errorText: loginViewModel.getPassword.error,
+                      //errorText: loginViewModel.getPassword.error,
                       icon: Icons.lock,
                       isPasswordActive: true,
                       iconColor: darkGreenTextColor,
                       onChanged: (String value){
-                        loginViewModel.changePassword(value);
+                        //loginViewModel.changePassword(value);
+                        Provider.of<LoginViewModel>(context,listen: false).changePassword(value);
                       },
                     ),
                   ),
@@ -132,17 +134,22 @@ class _LoginScreenState extends State<LoginScreen> {
                           text: 'Login',
                           buttonColor: darkGreenTextColor,
                           onPressed: () {
-                            print("Hello1");
-                            if(!loginViewModel.isValid){
-                              print("Hello2");
-                              return null;
-                            }
-                            else{
-                              print("Hello3");
-                              Navigator.push(context, MaterialPageRoute(builder: (context){
+                            if(formKey.currentState!.validate()){
+                              return Navigator.push(context, MaterialPageRoute(builder: (context){
                                 return HomeScreen();
                               }));
                             }
+                            // print("Hello1");
+                            // if(!loginViewModel.isValid){
+                            //   print("Hello2");
+                            //   return null;
+                            // }
+                            // else{
+                            //   print("Hello3");
+                            //   Navigator.push(context, MaterialPageRoute(builder: (context){
+                            //     return HomeScreen();
+                            //   }));
+                            // }
                           }
                       )
                   ),
@@ -159,14 +166,17 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: const ButtonStyle(
                           ),
                           onPressed: (){
-                            if(!loginViewModel.isValid){
-                               Navigator.push(context, MaterialPageRoute(builder: (context){
-                                return SignUpScreen();
-                              }));
-                            }
-                            else{
-                               false;
-                            }
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return SignUpScreen();
+                            }));
+                            // if(!loginViewModel.isValid){
+                            //    Navigator.push(context, MaterialPageRoute(builder: (context){
+                            //     return SignUpScreen();
+                            //   }));
+                            // }
+                            // else{
+                            //    false;
+                            // }
 
                           },
                           child: const Text('Sign up',

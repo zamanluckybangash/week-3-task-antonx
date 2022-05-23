@@ -1,20 +1,18 @@
 
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:week_3_task_2_antonx/ui/screens/cart_section/cart_item/cart_item_view_model.dart';
-
 import '../../../../core/constant/colors.dart';
-import '../../../custom_widgets/custom_counter_cart_items.dart';
 import '../my_cart/my_cart_view_model.dart';
 
-class CartItem extends StatelessWidget {
-  const CartItem({Key? key}) : super(key: key);
+class CartItemScreen extends StatelessWidget {
+  const CartItemScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
+
     return Consumer<CartItemViewModel>(
         builder: (context, model , child){
 
@@ -52,7 +50,7 @@ class CartItem extends StatelessWidget {
                          Padding(
                           padding: EdgeInsets.only(left: 8.0),
                           child: Text(model.getDescription.description.toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: greyColor,
                                 fontWeight: FontWeight.w400
                             ),

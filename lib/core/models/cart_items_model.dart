@@ -4,13 +4,13 @@ import 'package:flutter/cupertino.dart';
 
 import '../../ui/custom_widgets/custom_counter_cart_items.dart';
 
-class CartItemModel{
+class CartItem{
   Image? image;
   String? name;
   String? description;
   IconData? iconData;
   CustomCounterCartItem? counter;
 
-  CartItemModel(this.image , this.name, this.description, this.iconData,this.counter);
+  CartItem(this.image , this.name, this.description, this.iconData,this.counter);
 
 }

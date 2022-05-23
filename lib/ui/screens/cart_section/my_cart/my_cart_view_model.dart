@@ -1,13 +1,13 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:week_3_task_2_antonx/core/view_models/base_view_model.dart';
-import '../cart_item/cart_item.dart';
+import '../cart_item/cart_item_screen.dart';
 
 class MyCartViewModel extends ChangeNotifier{
 
-  List<CartItem> cartList =[];
+  List<CartItemScreen> cartList =[];
 
-  void add(CartItem index){
+  void add(CartItemScreen index){
     cartList.add(index);
     notifyListeners();
   }

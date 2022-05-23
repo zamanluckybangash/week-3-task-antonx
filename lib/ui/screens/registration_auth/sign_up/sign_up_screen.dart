@@ -77,7 +77,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           padding: const EdgeInsets.only(top: 40,left: 15,right: 15),
                           child: InputTextFormField(
                             hintText: 'Full name',
-                            errorText: signUpViewModel.getName.error,
                             icon: Icons.account_circle,
                             iconColor: darkGreenTextColor,
                             onChanged: (String value){
@@ -89,7 +88,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           padding: const EdgeInsets.only(top: 20,left: 15,right: 15),
                           child: InputTextFormField(
                             hintText: 'mzamanshah@gmail.com',
-                            errorText: signUpViewModel.getEmail.error,
                             icon: Icons.email,
                             iconColor: darkGreenTextColor,
                             onChanged: (String value){
@@ -101,7 +99,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           padding: const EdgeInsets.only(top: 20,left: 15,right: 15),
                           child: InputTextFormField(
                             hintText: 'Password',
-                            errorText: signUpViewModel.getPassword.error,
                             isPasswordActive: true,
                             icon: Icons.lock,
                             iconColor: darkGreenTextColor,
@@ -115,7 +112,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         child: InputTextFormField(
                           hintText: 'Confirm password',
                           isPasswordActive: true,
-                          errorText: signUpViewModel.getConfirmPassword.error,
                           icon: Icons.lock,
                           iconColor: darkGreenTextColor,
                           onChanged: (String value){
@@ -168,11 +164,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           child:  RoundedRectangularButton(
                               text: 'Sign Up',
                               onPressed: (){
-                                if(!signUpViewModel.isValid){
-                                  return null;
-                                }
-                                else{
-                                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                                if(formKey.currentState!.validate()){
+                                  return Navigator.push(context, MaterialPageRoute(builder: (context){
                                     return HomeScreen();
                                   }));
                                 }

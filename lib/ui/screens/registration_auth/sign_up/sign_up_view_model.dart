@@ -14,45 +14,21 @@ class SignUpViewModel extends ChangeNotifier{
 
   // setter
 void changeName(String value){
-  if(value.length >=5){
     _name = SignUpUser(value, null);
-  }
-  else{
-    print("name error");
-    _name= SignUpUser(null, 'Name must be greater than 5');
-  }
-  notifyListeners();
+    notifyListeners();
 }
 
 void changeEmail(String value){
-  if(value.length >=5){
     _email = SignUpUser(value, null);
-  }
-  else{
-    print("email error");
-    _email = SignUpUser(null, 'Email must be greater tha 5');
-  }
-  notifyListeners();
+    notifyListeners();
 }
   void changePassword(String value){
-    if(value.length >=5){
       _password = SignUpUser(value, null);
-    }
-    else{
-      print("password error");
-      _password = SignUpUser(null, 'Password must be greater tha 5');
-    }
-    notifyListeners();
+      notifyListeners();
   }
   void changeConfirmPassword(String value){
-    if(value.length >=5){
       _confirmPassword = SignUpUser(value, null);
-    }
-    else{
-      print("confirm error");
-      _confirmPassword = SignUpUser(null, 'ConfirmPassword must be greater tha 5');
-    }
-    notifyListeners();
+      notifyListeners();
   }
 
   // getter
@@ -61,12 +37,4 @@ SignUpUser get getEmail => _email;
 SignUpUser get getPassword => _password;
 SignUpUser get getConfirmPassword => _confirmPassword;
 
-bool get isValid{
-  if(_name.name !=null && _email.name !=null  && _password.name !=null && _confirmPassword.name !=null ){
-    return true;
-  }
-  else{
-    return false;
-  }
-}
 }

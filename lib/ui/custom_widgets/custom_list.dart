@@ -1,16 +1,16 @@
 
 
-import '../screens/cart_section/cart_item/cart_item.dart';
+import '../screens/cart_section/cart_item/cart_item_screen.dart';
 
 class CustomList {
 
-  List<CartItem> cartList =[];
+  List<CartItemScreen> cartList =[];
 
-  void add(CartItem getCartItem){
+  void add(CartItemScreen getCartItem){
     cartList.add(getCartItem);
   }
 
-  List<CartItem> get getSelectedCart{
+  List<CartItemScreen> get getSelectedCart{
   return cartList;
 }
 }
