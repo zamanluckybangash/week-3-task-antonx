@@ -6,15 +6,16 @@ import '../screens/product_details_section/product_details.dart';
 
 class CustomUpperStack  extends StatelessWidget {
 
-  Plant? plant ;
-  String? id;
-  CustomUpperStack({this.id, this.plant});
+  Plant? uperStackPlant ;
+  //int? uperStackId;
+  CustomUpperStack({this.uperStackPlant});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
         Navigator.push(context, MaterialPageRoute(builder: (context){
-          return ProductDetail(plant: plant , id: plant?.id,);
+          return ProductDetail(productDetailPlant: uperStackPlant,);
         }));
       },
       child: Container(
@@ -39,15 +40,15 @@ class CustomUpperStack  extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                       Text("${plant?.title}",
-                        style: TextStyle(
+                       Text("${uperStackPlant?.title}",
+                        style: const TextStyle(
                             color: darkGreenTextColor
                         ),
                       ),
                       Row(
                         children: [
-                           Text('${plant?.type}',
-                            style: TextStyle(
+                           Text('${uperStackPlant?.type}',
+                            style: const TextStyle(
                                 color: darkGreenTextColor,
                                 fontWeight: FontWeight.w600
                             ),
@@ -60,8 +61,8 @@ class CustomUpperStack  extends StatelessWidget {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(5)
                             ),
-                            child:  Center(child: Text("${plant?.price}",
-                              style: TextStyle(
+                            child:  Center(child: Text("\$${uperStackPlant?.price}",
+                              style: const TextStyle(
                                   color: darkGreenTextColor,
                                   fontWeight: FontWeight.w700,
                                   fontSize: 8
@@ -104,7 +105,7 @@ class CustomUpperStack  extends StatelessWidget {
                   //padding: EdgeInsets.all(8),
                   height: 150,
                   width: 120,
-                  child: Image.asset("${plant?.imageUrl}"),
+                  child: Image.asset("${uperStackPlant?.imageUrl}"),
                   // color: Colors.blue,
                 )
             ),

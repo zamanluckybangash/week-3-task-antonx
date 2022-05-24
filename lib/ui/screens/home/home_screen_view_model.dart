@@ -10,13 +10,13 @@ class HomeScreenViewModel extends ChangeNotifier{
 
   //final _databaseService = DatabaseService();
 
-  final List<Plant> _plant = DatabaseService().plant;
+  final List<Plant> _plant = DatabaseService().plantList;
 
-  List<Plant> get plant {
+  List<Plant> get getPlant {
     return _plant;
   }
 
-  Plant findById(String? id){
+  Plant findById(int? id){
     return _plant.firstWhere((element) => element.id==id);
   }
 

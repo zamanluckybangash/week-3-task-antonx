@@ -1,16 +1,17 @@
 
 
-import '../screens/cart_section/cart_item/cart_item_screen.dart';
-
-class CustomList {
-
-  List<CartItemScreen> cartList =[];
-
-  void add(CartItemScreen getCartItem){
-    cartList.add(getCartItem);
-  }
-
-  List<CartItemScreen> get getSelectedCart{
-  return cartList;
-}
-}
+// import '../screens/cart_section/cart_item/cart_item_screen.dart';
+// import 'custom_cart_item.dart';
+//
+// class CustomList {
+//
+//   List<CustomCartItem> cartList =[];
+//
+//   void add(CustomCartItem getCartItem){
+//     cartList.add(getCartItem);
+//   }
+//
+//   List<CustomCartItem> get getSelectedCart{
+//   return cartList;
+// }
+// }

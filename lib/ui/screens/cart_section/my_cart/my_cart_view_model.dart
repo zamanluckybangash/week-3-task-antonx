@@ -1,19 +1,17 @@
-
 import 'package:flutter/cupertino.dart';
-import 'package:week_3_task_2_antonx/core/view_models/base_view_model.dart';
-import '../cart_item/cart_item_screen.dart';
+import '../../../../core/models/plant.dart';
 
 class MyCartViewModel extends ChangeNotifier{
 
-  List<CartItemScreen> cartList =[];
+  List<Plant> cartList =[];
 
-  void add(CartItemScreen index){
-    cartList.add(index);
+  void add(Plant index){
+    cartList.addAll(<Plant>[index]);
     notifyListeners();
   }
 
-  remove(){
-    cartList.remove(cartList[0]);
+  remove(int? index){
+    cartList.removeAt(index!);
     notifyListeners();
   }
   int num=1;

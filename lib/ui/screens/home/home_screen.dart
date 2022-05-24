@@ -1,6 +1,4 @@
-import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-
 import '../../../core/constant/colors.dart';
 import '../../custom_widgets/custom_cart_badge.dart';
 import '../../custom_widgets/custom_lover_stack.dart';
@@ -67,7 +65,6 @@ class HomeScreen extends StatelessWidget {
                 Container(
                     height: 320,
                     child: CustomTabBar(
-
                     )
                 ),
                 const SizedBox(height: 10,),

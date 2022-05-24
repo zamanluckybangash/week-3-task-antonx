@@ -4,33 +4,39 @@ import 'package:week_3_task_2_antonx/core/models/plant.dart';
 
 class DatabaseService {
 
-  List<Plant> plant =[
+  List<Plant> plantList =[
 
   Plant(
-    id: 'p0',
+    id: 0,
     title: 'Indoor',
     type: 'Peace lily',
-    description:'How it is a beautiful flower',
+    description:"However, they look like huge white flowers, and they bloom"
+        "throughout the year and a bit more frequently in the springtime."
+        "This coupled with the plant's breads, deep green leaves",
     imageUrl:"assets/kondol5.png",
-    info: 'Most attractive',
+    heightInfo: 'Height',
+    weatherInfo:"Humidity",
     price:31.0,
       ),
     Plant(
-      id: 'p1',
+      id: 1,
       title: 'Outdoor',
       type: 'Schefflera',
       description:'How it is a beautiful flower',
       imageUrl:"assets/kondol4.png",
-      info: 'Most attractive',
+      heightInfo: 'Height',
+      weatherInfo: "Humidity",
       price:25.0,
     ),
     Plant(
-      id: 'p2',
+      id: 2,
       title: 'Top',
       type: 'SunFlower',
-      description:'How it is a beautiful flower',
+      description:'How it is a beautiful flower and i like this one so '
+                  'much.',
       imageUrl:"assets/kondol2.jpg",
-      info: 'Most attractive',
+      heightInfo: 'Height',
+      weatherInfo:'Humidity',
       price:33.0,
     ),
   ];

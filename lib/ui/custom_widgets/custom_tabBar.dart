@@ -18,6 +18,7 @@ class _CustomTabBarState extends State<CustomTabBar> with TickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     TabController _controller = TabController(length: 4, vsync: this);
+
     return Consumer<HomeScreenViewModel>(builder: (context,model,child){
       return Column(
         //mainAxisAlignment: MainAxisAlignment.start,
@@ -61,11 +62,11 @@ class _CustomTabBarState extends State<CustomTabBar> with TickerProviderStateMix
               children: [
                 ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: model.plant.length,
+                    itemCount: model.getPlant.length,
                     itemBuilder: (BuildContext context , int index){
                       return  CustomUpperStack(
-                        plant: model.plant[index],
-                        id: model.plant[index].id,
+                        uperStackPlant: model.getPlant[index],
+                        //uperStackId: model.getPlant[index].id,
                       );
                     }
                 ),

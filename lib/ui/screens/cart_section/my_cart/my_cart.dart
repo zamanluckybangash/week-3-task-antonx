@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:week_3_task_2_antonx/ui/custom_widgets/custom_cart_item.dart';
 import 'package:week_3_task_2_antonx/ui/screens/cart_section/my_cart/my_cart_view_model.dart';
 import 'package:week_3_task_2_antonx/ui/screens/home/home_screen.dart';
 import '../../../../core/constant/colors.dart';
@@ -9,6 +10,7 @@ class MyCart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
+
     return Scaffold(
       body: Container(
         color: Colors.white,
@@ -30,7 +32,10 @@ class MyCart extends StatelessWidget {
                         itemBuilder: (BuildContext context, int index){
                           return Card(
                             //color: Colors.black,
-                            child: myCartViewModel.cartList[index],
+                            child: CustomCartItem(
+                                CustomCartItemPlant: myCartViewModel.cartList[index],
+                              CustomCartItemId: index,
+                            ),
                           );
                         },
                         separatorBuilder: (context, index){

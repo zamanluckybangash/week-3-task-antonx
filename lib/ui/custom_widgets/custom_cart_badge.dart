@@ -8,7 +8,6 @@ import '../screens/cart_section/my_cart/my_cart.dart';
 
 class CartBadge extends StatelessWidget {
 
-
   bool check = false;
 
   @override
@@ -25,7 +24,7 @@ class CartBadge extends StatelessWidget {
     return IconButton(
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return  const MyCart();
+            return const MyCart();
           }));
         },
         iconSize: 40,
