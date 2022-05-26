@@ -79,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         //errorText: loginViewModel.getName.error,
                         icon: Icons.account_circle,
                         iconColor: darkGreenTextColor,
-                        validator: model.nameValidation,
+                        validator: model.fullNameValidation,
                         // onChanged: (String value){
                         //   //loginViewModel.changeName(value);
                         //   Provider.of<LoginViewModel>(context,listen: false).changeName(value);

@@ -1,7 +1,5 @@
 
 import 'package:flutter/cupertino.dart';
-import 'package:week_3_task_2_antonx/core/models/login_user.dart';
-import '../../../../core/models/login_user.dart';
 
 class LoginViewModel extends ChangeNotifier{
 
@@ -10,7 +8,7 @@ class LoginViewModel extends ChangeNotifier{
 
    // setter
 
-  String? nameValidation(String? value) {
+  String? fullNameValidation(String? value) {
     if (value!.isEmpty) {
       return 'Please Enter Your Name';
     }
@@ -21,10 +19,4 @@ class LoginViewModel extends ChangeNotifier{
       return 'Please Enter Your Password';
     }
   }
-
-
-  // getter
-
-
-
 }
