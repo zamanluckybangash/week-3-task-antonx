@@ -15,7 +15,7 @@ class LoginViewModel extends ChangeNotifier{
      notifyListeners();
    }
    void changePassword(String value){
-     _password = LoginUser(null,value);
+     _password=LoginUser(null,value);
      notifyListeners();
    }
 
@@ -23,20 +23,5 @@ class LoginViewModel extends ChangeNotifier{
   // getter
   LoginUser get getName =>_name;
   LoginUser get getPassword => _password;
-
-   String? fullNameValidator(val){
-     if(val == null || val == ""){
-       return "full name error";
-     }else{
-       return "";
-     }
-   }
-   String? passwordNameValidator(val){
-     if(val == null || val == ""){
-       return "password error";
-     }else{
-       return "";
-     }
-   }
 
 }
