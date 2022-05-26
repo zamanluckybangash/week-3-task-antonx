@@ -9,25 +9,25 @@ class SignUpViewModel extends ChangeNotifier{
 
   String? nameValidation(String? value) {
     if (value!.isEmpty) {
-      return 'Please Enter Your Name';
+      return 'Enter Your Name';
     }
   }
 
   String? passwordValidation(String? value) {
     if (value!.isEmpty) {
-      return 'Please Enter Your Password';
+      return 'Enter Your Password';
     }
   }
 
   String? emailValidation(String? value) {
     if (value!.isEmpty) {
-      return 'Please Enter Your Password';
+      return 'Enter Your Password';
     }
   }
 
   String? confirmValidation(String? value) {
     if (value!.isEmpty) {
-      return 'Please Enter Your Password';
+      return 'Enter Your Password';
     }
   }
 }

@@ -10,13 +10,13 @@ class LoginViewModel extends ChangeNotifier{
 
   String? fullNameValidation(String? value) {
     if (value!.isEmpty) {
-      return 'Please Enter Your Name';
+      return 'Enter Your Name';
     }
   }
 
   String? passwordValidation(String? value) {
     if (value!.isEmpty) {
-      return 'Please Enter Your Password';
+      return 'Enter Your Password';
     }
   }
 }
