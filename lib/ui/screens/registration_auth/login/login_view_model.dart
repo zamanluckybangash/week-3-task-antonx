@@ -24,4 +24,19 @@ class LoginViewModel extends ChangeNotifier{
   LoginUser get getName =>_name;
   LoginUser get getPassword => _password;
 
+   String? fullNameValidator(val){
+     if(val == null || val == ""){
+       return "full name error";
+     }else{
+       return "";
+     }
+   }
+   String? passwordNameValidator(val){
+     if(val == null || val == ""){
+       return "password error";
+     }else{
+       return "";
+     }
+   }
+
 }
