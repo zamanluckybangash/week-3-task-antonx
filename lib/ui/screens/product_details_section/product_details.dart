@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:week_3_task_2_antonx/ui/screens/cart_section/my_cart/my_cart.dart';
 import 'package:week_3_task_2_antonx/ui/screens/cart_section/my_cart/my_cart_view_model.dart';
 import 'package:week_3_task_2_antonx/ui/screens/home/home_screen_view_model.dart';
 import '../../../core/constant/colors.dart';
@@ -20,7 +21,7 @@ class ProductDetail extends StatelessWidget {
     MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
 
     return  Consumer<HomeScreenViewModel>(builder: (context,model,child){
-      final findById = model.findById(productDetailPlant?.id);
+     // final findById = model.findById(productDetailPlant?.id);
       return Material(
         child:  Container(
           color: curveColor,
@@ -271,7 +272,11 @@ class ProductDetail extends StatelessWidget {
                               Row(
                                 children: [
                                   IconButton(
-                                      onPressed: (){},
+                                      onPressed: (){
+                                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                                          return MyCart();
+                                        }));
+                                      },
                                       iconSize: 40,
                                       icon: const CircleAvatar(
                                         radius: 20,
@@ -296,7 +301,10 @@ class ProductDetail extends StatelessWidget {
                                               padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15))
                                           ),
                                           onPressed: (){
-                                            myCartViewModel.add(findById);
+                                            myCartViewModel.add(productDetailPlant!);
+                                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                                              return MyCart();
+                                            }));
                                           },
                                           child:  Row(
                                             mainAxisAlignment: MainAxisAlignment.center,

@@ -6,22 +6,25 @@ class MyCartViewModel extends ChangeNotifier{
   List<Plant> cartList =[];
 
   void add(Plant index){
-    cartList.addAll(<Plant>[index]);
+    cartList.add(index);
     notifyListeners();
   }
+
 
   remove(int? index){
     cartList.removeAt(index!);
     notifyListeners();
   }
-  int num=1;
+
+  int count=1;
+  double total=0.0;
   increment(){
-    num++;
+    count++;
     notifyListeners();
   }
   decrement(){
-    if(num>1){
-      num--;
+    if(count>1){
+      count--;
     }
     notifyListeners();
   }

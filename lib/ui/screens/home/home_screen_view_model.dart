@@ -16,8 +16,8 @@ class HomeScreenViewModel extends ChangeNotifier{
     return _plant;
   }
 
-  Plant findById(int? id){
-    return _plant.firstWhere((element) => element.id==id);
-  }
-
+//   Plant findById(int? id){
+//     return _plant.firstWhere((element) => element.id==id);
+//   }
+//
 }

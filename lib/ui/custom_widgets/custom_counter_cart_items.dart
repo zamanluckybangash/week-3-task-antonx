@@ -21,59 +21,62 @@ class  CustomCounterCartItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
-    int count=myCartViewModel.num;
-    return Container(
-      // color: Colors.red,
-      height: 32,
-      width: 80,
-      child: Row(
-        //crossAxisAlignment: CrossAxisAlignment.start,
-        //mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Expanded(
-              child:  IconButton(
-                onPressed: (){
-                  myCartViewModel.decrement();
-                },
-                icon:   Container(
-                  height: 40,
-                  width: 30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(3),
-                    border: Border.all(color: darkGreenTextColor),
-                  ),
-                  child: const Icon(Icons.remove,
-                    size: 7,
-                    color: darkGreenTextColor,
-                  ),
-                ),
-              ),
-            ),
-            Text(count.toString(),
-              style:  const TextStyle(color: darkGreenTextColor),
-            ),
-            Expanded(
-              child: IconButton(
+    //MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
+    //int count=myCartViewModel.count;
+    return Consumer<MyCartViewModel>(builder: (context , model , child){
+      return Container(
+        // color: Colors.red,
+        height: 32,
+        width: 80,
+        child: Row(
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          //mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Expanded(
+                child:  IconButton(
                   onPressed: (){
-                    myCartViewModel.increment();
+                    model.decrement();
                   },
-                  icon:  Container(
-                    height: 50,
+                  icon:   Container(
+                    height: 40,
                     width: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(3),
                       border: Border.all(color: darkGreenTextColor),
                     ),
-                    child: const Icon(Icons.add,
-                      size: 10,
+                    child: const Icon(Icons.remove,
+                      size: 7,
                       color: darkGreenTextColor,
                     ),
-                  )
+                  ),
+                ),
               ),
-            ),
-          ]
-      ),
+              Text("${model.count}",
+                style:  const TextStyle(color: darkGreenTextColor),
+              ),
+              Expanded(
+                child: IconButton(
+                    onPressed: (){
+                      model.increment();
+                    },
+                    icon:  Container(
+                      height: 50,
+                      width: 30,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(3),
+                        border: Border.all(color: darkGreenTextColor),
+                      ),
+                      child: const Icon(Icons.add,
+                        size: 10,
+                        color: darkGreenTextColor,
+                      ),
+                    )
+                ),
+              ),
+            ]
+        ),
+      );
+    }
     );
   }
 }
