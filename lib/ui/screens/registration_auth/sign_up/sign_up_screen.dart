@@ -83,7 +83,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             //   sig
                             //   vanUpViewModel.changeName(value);
                             // },
-                            validator: signUpViewModel.nameValidation,
+                            validator: signUpViewModel.fullNameValidation,
                           )
                       ),
                       Padding(

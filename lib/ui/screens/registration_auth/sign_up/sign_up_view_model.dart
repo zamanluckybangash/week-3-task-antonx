@@ -7,7 +7,7 @@ import '../../../../core/models/sign_up_user.dart';
 
 class SignUpViewModel extends ChangeNotifier{
 
-  String? nameValidation(String? value) {
+  String? fullNameValidation(String? value) {
     if (value!.isEmpty) {
       return 'Enter Your Name';
     }
