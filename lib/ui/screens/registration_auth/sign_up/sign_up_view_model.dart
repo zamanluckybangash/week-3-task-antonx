@@ -7,34 +7,27 @@ import '../../../../core/models/sign_up_user.dart';
 
 class SignUpViewModel extends ChangeNotifier{
 
-  SignUpUser _name = SignUpUser(null,null);
-  SignUpUser _email = SignUpUser(null, null);
-  SignUpUser _password = SignUpUser(null, null);
-  SignUpUser _confirmPassword = SignUpUser(null, null);
-
-  // setter
-void changeName(String value){
-    _name = SignUpUser(value, null);
-    notifyListeners();
-}
-
-void changeEmail(String value){
-    _email = SignUpUser(value, null);
-    notifyListeners();
-}
-  void changePassword(String value){
-      _password = SignUpUser(value, null);
-      notifyListeners();
-  }
-  void changeConfirmPassword(String value){
-      _confirmPassword = SignUpUser(value, null);
-      notifyListeners();
+  String? nameValidation(String? value) {
+    if (value!.isEmpty) {
+      return 'Please Enter Your Name';
+    }
   }
 
-  // getter
-SignUpUser get getName => _name;
-SignUpUser get getEmail => _email;
-SignUpUser get getPassword => _password;
-SignUpUser get getConfirmPassword => _confirmPassword;
+  String? passwordValidation(String? value) {
+    if (value!.isEmpty) {
+      return 'Please Enter Your Password';
+    }
+  }
 
+  String? emailValidation(String? value) {
+    if (value!.isEmpty) {
+      return 'Please Enter Your Password';
+    }
+  }
+
+  String? confirmValidation(String? value) {
+    if (value!.isEmpty) {
+      return 'Please Enter Your Password';
+    }
+  }
 }

@@ -79,11 +79,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         //errorText: loginViewModel.getName.error,
                         icon: Icons.account_circle,
                         iconColor: darkGreenTextColor,
-                        validator: model.fullNameValidator,
-                        onChanged: (String value){
-                          //loginViewModel.changeName(value);
-                          Provider.of<LoginViewModel>(context,listen: false).changeName(value);
-                        },
+                        validator: model.nameValidation,
+                        // onChanged: (String value){
+                        //   //loginViewModel.changeName(value);
+                        //   Provider.of<LoginViewModel>(context,listen: false).changeName(value);
+                        // },
                       ),
                     ),
                     Padding(
@@ -93,12 +93,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         //errorText: loginViewModel.getPassword.error,
                         icon: Icons.lock,
                         isPasswordActive: true,
-                        validator: model.passwordNameValidator,
+                        validator: model.passwordValidation,
                         iconColor: darkGreenTextColor,
-                        onChanged: (String value){
-                          //loginViewModel.changePassword(value);
-                          Provider.of<LoginViewModel>(context,listen: false).changePassword(value);
-                        },
+                        // onChanged: (String value){
+                        //   //loginViewModel.changePassword(value);
+                        //   Provider.of<LoginViewModel>(context,listen: false).changePassword(value);
+                        // },
                       ),
                     ),
                     Row(
@@ -134,10 +134,17 @@ class _LoginScreenState extends State<LoginScreen> {
                             text: 'Login',
                             buttonColor: darkGreenTextColor,
                             onPressed: () {
-                              if(formKey.currentState!.validate()){
-                                return Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return HomeScreen();
-                                }));
+                              if(!formKey.currentState!.validate()){
+                                print("enter else");
+
+                              }else {
+                                // return null;
+
+                                print("enter");
+                                return Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                      return HomeScreen();
+                                    }));
                               }
                               // print("Hello1");
                               // if(!loginViewModel.isValid){

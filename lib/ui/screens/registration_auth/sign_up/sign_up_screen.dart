@@ -79,9 +79,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             hintText: 'Full name',
                             icon: Icons.account_circle,
                             iconColor: darkGreenTextColor,
-                            onChanged: (String value){
-                              signUpViewModel.changeName(value);
-                            },
+                            // onChanged: (String value){
+                            //   sig
+                            //   vanUpViewModel.changeName(value);
+                            // },
+                            validator: signUpViewModel.nameValidation,
                           )
                       ),
                       Padding(
@@ -90,9 +92,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             hintText: 'mzamanshah@gmail.com',
                             icon: Icons.email,
                             iconColor: darkGreenTextColor,
-                            onChanged: (String value){
-                              signUpViewModel.changeEmail(value);
-                            },
+                            // onChanged: (String value){
+                            //   signUpViewModel.changeEmail(value);
+                            // },
+                            validator: signUpViewModel.emailValidation,
                           )
                       ),
                       Padding(
@@ -102,9 +105,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             isPasswordActive: true,
                             icon: Icons.lock,
                             iconColor: darkGreenTextColor,
-                            onChanged: (String value){
-                              signUpViewModel.changePassword(value);
-                            },
+                            // onChanged: (String value){
+                            //   signUpViewModel.changePassword(value);
+                            // },
+                            validator: signUpViewModel.passwordValidation,
                           )
                       ),
                       Padding(
@@ -114,9 +118,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           isPasswordActive: true,
                           icon: Icons.lock,
                           iconColor: darkGreenTextColor,
-                          onChanged: (String value){
-                            signUpViewModel.changeConfirmPassword(value);
-                          },
+                          // onChanged: (String value){
+                          //   signUpViewModel.changeConfirmPassword(value);
+                          // },
+                          validator: signUpViewModel.confirmValidation,
                         ),
                       ),
                       const SizedBox(height: 20,),
@@ -169,6 +174,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     return HomeScreen();
                                   }));
                                 }
+
                               },
                               buttonColor: darkGreenTextColor)
                       ),

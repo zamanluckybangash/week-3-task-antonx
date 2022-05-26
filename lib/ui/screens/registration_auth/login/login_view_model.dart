@@ -5,38 +5,26 @@ import '../../../../core/models/login_user.dart';
 
 class LoginViewModel extends ChangeNotifier{
 
-   LoginUser _name = LoginUser( null,null);
-   LoginUser _password = LoginUser( null,null);
+   // LoginUser _name = LoginUser( null,null);
+   // LoginUser _password = LoginUser( null,null);
 
    // setter
 
-   void changeName(String value){
-     _name=LoginUser(value,null);
-     notifyListeners();
-   }
-   void changePassword(String value){
-     _password=LoginUser(null,value);
-     notifyListeners();
-   }
+  String? nameValidation(String? value) {
+    if (value!.isEmpty) {
+      return 'Please Enter Your Name';
+    }
+  }
+
+  String? passwordValidation(String? value) {
+    if (value!.isEmpty) {
+      return 'Please Enter Your Password';
+    }
+  }
 
 
   // getter
-  LoginUser get getName =>_name;
-  LoginUser get getPassword => _password;
 
-   String? fullNameValidator(val){
-     if(val == null || val == ""){
-       return "full name error";
-     }else{
-       return "";
-     }
-   }
-   String? passwordNameValidator(val){
-     if(val == null || val == ""){
-       return "password error";
-     }else{
-       return "";
-     }
-   }
+
 
 }
