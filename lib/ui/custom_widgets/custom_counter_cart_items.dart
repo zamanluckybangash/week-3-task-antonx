@@ -4,10 +4,13 @@ import 'package:provider/provider.dart';
 import 'package:week_3_task_2_antonx/core/view_models/base_view_model.dart';
 
 import '../../core/constant/colors.dart';
+import '../../core/models/plant.dart';
 import '../screens/cart_section/my_cart/my_cart_view_model.dart';
 
 class  CustomCounterCartItem extends StatelessWidget {
+  Plant? CustomCartItemPlant;
 
+  CustomCounterCartItem({Key? key,this.CustomCartItemPlant}) : super(key: key);
   //
   // int count=0;
   //
@@ -35,7 +38,7 @@ class  CustomCounterCartItem extends StatelessWidget {
               Expanded(
                 child:  IconButton(
                   onPressed: (){
-                    model.decrement();
+                    model.decrement(CustomCartItemPlant);
                   },
                   icon:   Container(
                     height: 40,
@@ -51,13 +54,13 @@ class  CustomCounterCartItem extends StatelessWidget {
                   ),
                 ),
               ),
-              Text("${model.count}",
+              Text("${CustomCartItemPlant!.quantity}",
                 style:  const TextStyle(color: darkGreenTextColor),
               ),
               Expanded(
                 child: IconButton(
                     onPressed: (){
-                      model.increment();
+                      model.increment(CustomCartItemPlant);
                     },
                     icon:  Container(
                       height: 50,

@@ -24,7 +24,7 @@ class CartBadge extends StatelessWidget {
     return IconButton(
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const MyCart();
+            return  MyCart();
           }));
         },
         iconSize: 40,

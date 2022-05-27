@@ -24,7 +24,6 @@ class HomeScreen extends StatelessWidget {
                       //backgroundColor: Colors.red,
                       child: ClipOval(child: Image.asset('assets/muhammad.jpg')),
                     ),
-
                     CartBadge()
                   ],
                 ),

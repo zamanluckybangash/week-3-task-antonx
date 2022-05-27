@@ -11,6 +11,7 @@ class Plant{
   String? heightInfo;
   String? weatherInfo;
   double? price;
+  int quantity;
 
   Plant({
     this.id = 0,
@@ -21,6 +22,7 @@ class Plant{
     this.heightInfo= 'Most attractive',
     this.weatherInfo,
     this.price = 20.0,
+    this.quantity=1
   }
   );
 }

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:week_3_task_2_antonx/core/services/database_services.dart';
 import 'package:week_3_task_2_antonx/ui/custom_widgets/custom_cart_item.dart';
 import 'package:week_3_task_2_antonx/ui/screens/cart_section/my_cart/my_cart_view_model.dart';
 import 'package:week_3_task_2_antonx/ui/screens/home/home_screen.dart';
 import 'package:week_3_task_2_antonx/ui/screens/home/home_screen_view_model.dart';
 import '../../../../core/constant/colors.dart';
 class MyCart extends StatelessWidget {
-  const MyCart({Key? key}) : super(key: key);
 
+  final data = DatabaseService().databasePlantList;
+  
   @override
   Widget build(BuildContext context) {
     MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
@@ -120,7 +122,7 @@ class MyCart extends StatelessWidget {
                                     fontWeight: FontWeight.w500
                                 ),
                               ),
-                              Text( '\$${( model.getPlant.first.price! * myCartViewModel.cartList.length* myCartViewModel.count).toString()}',
+                              Text( '\$${( model.plants.first.price! * myCartViewModel.cartList.length* myCartViewModel.count).toString()}',
                                 style: const TextStyle(
                                     color: darkGreenTextColor,
                                     fontSize: 15
@@ -161,7 +163,7 @@ class MyCart extends StatelessWidget {
                                     fontWeight: FontWeight.w700
                                 ),
                               ),
-                              Text("\$ ${(10.0 + myCartViewModel.cartList.length! * myCartViewModel.count).toString()}",
+                              Text("\$ ${(10.0 + myCartViewModel.cartList.length * myCartViewModel.count).toString()}",
                                 style: const TextStyle(
                                     color: darkGreenTextColor,
                                     fontSize: 15,

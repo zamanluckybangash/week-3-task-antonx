@@ -62,10 +62,10 @@ class _CustomTabBarState extends State<CustomTabBar> with TickerProviderStateMix
               children: [
                 ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: model.getPlant.length,
+                    itemCount: model.plants.length,
                     itemBuilder: (BuildContext context , int index){
                       return  CustomUpperStack(
-                        uperStackPlant: model.getPlant[index],
+                        uperStackPlant: model.plants[index],
                         //uperStackId: model.getPlant[index].id,
                       );
                     }

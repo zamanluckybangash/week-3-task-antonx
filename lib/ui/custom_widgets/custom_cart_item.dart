@@ -58,7 +58,7 @@ class CustomCartItem extends StatelessWidget {
                         ),
                       ),
                     ),
-                    CustomCounterCartItem()
+                    CustomCounterCartItem(CustomCartItemPlant: CustomCartItemPlant)
                   ],
                 ),
               ),

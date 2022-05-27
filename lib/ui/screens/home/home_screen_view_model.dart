@@ -8,16 +8,24 @@ import '../../../core/models/plant.dart';
 
 class HomeScreenViewModel extends ChangeNotifier{
 
-  //final _databaseService = DatabaseService();
-
-  final List<Plant> _plant = DatabaseService().plantList;
-
-  List<Plant> get getPlant {
-    return _plant;
+  HomeScreenViewModel(){
+    getPlant();
   }
 
-//   Plant findById(int? id){
-//     return _plant.firstWhere((element) => element.id==id);
-//   }
-//
+  List<Plant> _plantList =[];
+
+  final _databaseService = DatabaseService();
+
+  List<Plant> get plants=>_plantList;
+
+  getPlant() async{
+    _plantList = await _databaseService.databasePlantList;
+    notifyListeners();
+  }
+
+  // Plant findById(int? id){
+  //   return _plant.firstWhere((element) => element.id==id);
+  // }
+
 }
+

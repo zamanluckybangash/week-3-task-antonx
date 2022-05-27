@@ -19,7 +19,6 @@ class ProductDetail extends StatelessWidget {
   Widget build(BuildContext context) {
 
     MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
-
     return  Consumer<HomeScreenViewModel>(builder: (context,model,child){
      // final findById = model.findById(productDetailPlant?.id);
       return Material(

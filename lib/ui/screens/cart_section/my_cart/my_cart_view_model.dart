@@ -5,8 +5,8 @@ class MyCartViewModel extends ChangeNotifier{
 
   List<Plant> cartList =[];
 
-  void add(Plant index){
-    cartList.add(index);
+  void add(Plant getOneByOnePlant){
+    cartList.add(getOneByOnePlant);
     notifyListeners();
   }
 
@@ -16,15 +16,15 @@ class MyCartViewModel extends ChangeNotifier{
     notifyListeners();
   }
 
-  int count=1;
+  int count=0;
   double total=0.0;
-  increment(){
-    count++;
+  increment(Plant? plant){
+    plant!.quantity=plant.quantity+1;
     notifyListeners();
   }
-  decrement(){
-    if(count>1){
-      count--;
+  decrement(Plant? plant){
+    if(plant!.quantity>0){
+      plant!.quantity = plant.quantity-1;
     }
     notifyListeners();
   }
