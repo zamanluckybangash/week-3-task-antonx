@@ -5,14 +5,14 @@ class MyCartViewModel extends ChangeNotifier{
 
   List<Plant> cartList =[];
 
-  void add(Plant getOneByOnePlant){
-    cartList.add(getOneByOnePlant);
+  void addToList(Plant getPlant){
+    cartList.add(getPlant);
     notifyListeners();
   }
 
 
-  remove(int? index){
-    cartList.removeAt(index!);
+  remove(int? removeItem){
+    cartList.removeAt(removeItem!);
     notifyListeners();
   }
 

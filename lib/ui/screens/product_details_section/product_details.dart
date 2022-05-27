@@ -37,7 +37,6 @@ class ProductDetail extends StatelessWidget {
                   // color: Colors.blue,
                 ),
               ),
-
               Positioned(
                 child: ListView(
                   children: [
@@ -298,7 +297,7 @@ class ProductDetail extends StatelessWidget {
                                               padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15))
                                           ),
                                           onPressed: (){
-                                            myCartViewModel.add(productDetailPlant!);
+                                            myCartViewModel.addToList(productDetailPlant!);
                                             Navigator.push(context, MaterialPageRoute(builder: (context){
                                               return MyCart();
                                             }));
