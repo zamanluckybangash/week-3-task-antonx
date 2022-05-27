@@ -116,7 +116,7 @@ class MyCart extends StatelessWidget {
                                     fontWeight: FontWeight.w500
                                 ),
                               ),
-                              Text( '\$${(  model.cartList.length* model.count).toString()}',
+                              Text( '\$${(  model.cartList.length).toString()}',
                                 style: const TextStyle(
                                     color: darkGreenTextColor,
                                     fontSize: 15
@@ -157,7 +157,7 @@ class MyCart extends StatelessWidget {
                                     fontWeight: FontWeight.w700
                                 ),
                               ),
-                              Text("\$ ${(10.0 + model.cartList.length * model.count).toString()}",
+                              Text("\$ ${(10.0 + model.cartList.length ).toString()}",
                                 style: const TextStyle(
                                     color: darkGreenTextColor,
                                     fontSize: 15,

@@ -11,16 +11,6 @@ class  CustomCounterCartItem extends StatelessWidget {
   Plant? CustomCartItemPlant;
 
   CustomCounterCartItem({Key? key,this.CustomCartItemPlant}) : super(key: key);
-  //
-  // int count=0;
-  //
-  // int increment(int num){
-  //   return count = num;
-  // }
-  //
-  // int decrement(int num2) {
-  //   return count=num2;
-  // }
 
   @override
   Widget build(BuildContext context) {

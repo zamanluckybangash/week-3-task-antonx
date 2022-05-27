@@ -16,7 +16,6 @@ class MyCartViewModel extends ChangeNotifier{
     notifyListeners();
   }
 
-  int count=0;
   double total=0.0;
   increment(Plant? plant){
     plant!.quantity=plant.quantity+1;
@@ -24,7 +23,7 @@ class MyCartViewModel extends ChangeNotifier{
   }
   decrement(Plant? plant){
     if(plant!.quantity>0){
-      plant!.quantity = plant.quantity-1;
+      plant.quantity = plant.quantity-1;
     }
     notifyListeners();
   }
