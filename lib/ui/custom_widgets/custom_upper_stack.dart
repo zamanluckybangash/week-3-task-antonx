@@ -7,7 +7,6 @@ import '../screens/product_details_section/product_details.dart';
 class CustomUpperStack  extends StatelessWidget {
 
   Plant? uperStackPlant ;
-  //int? uperStackId;
   CustomUpperStack({this.uperStackPlant});
 
   @override

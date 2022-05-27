@@ -11,17 +11,15 @@ import '../../custom_widgets/custom_counter.dart';
 class ProductDetail extends StatelessWidget {
 
   Plant? productDetailPlant;
-  int? productDetailId;
+  //int? productDetailId;
 
-  ProductDetail({this.productDetailPlant,this.productDetailId});
+  ProductDetail({this.productDetailPlant,/*this.productDetailId*/});
 
   @override
   Widget build(BuildContext context) {
 
     MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
-    return  Consumer<HomeScreenViewModel>(builder: (context,model,child){
-     // final findById = model.findById(productDetailPlant?.id);
-      return Material(
+    return Material(
         child:  Container(
           color: curveColor,
           child: Stack(
@@ -366,6 +364,5 @@ class ProductDetail extends StatelessWidget {
         ),
 
       );
-    });
   }
 }

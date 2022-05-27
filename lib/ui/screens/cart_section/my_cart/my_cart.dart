@@ -122,7 +122,7 @@ class MyCart extends StatelessWidget {
                                     fontWeight: FontWeight.w500
                                 ),
                               ),
-                              Text( '\$${( model.plants.first.price! * myCartViewModel.cartList.length* myCartViewModel.count).toString()}',
+                              Text( '\$${( model.getPlants.first.price! * myCartViewModel.cartList.length* myCartViewModel.count).toString()}',
                                 style: const TextStyle(
                                     color: darkGreenTextColor,
                                     fontSize: 15

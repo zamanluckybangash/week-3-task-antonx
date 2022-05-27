@@ -9,16 +9,16 @@ import '../../../core/models/plant.dart';
 class HomeScreenViewModel extends ChangeNotifier{
 
   HomeScreenViewModel(){
-    getPlant();
+    addToPlantList();
   }
 
   List<Plant> _plantList =[];
 
   final _databaseService = DatabaseService();
 
-  List<Plant> get plants=>_plantList;
+  List<Plant> get getPlants=>_plantList;
 
-  getPlant() async{
+  addToPlantList() async{
     _plantList = await _databaseService.databasePlantList;
     notifyListeners();
   }
