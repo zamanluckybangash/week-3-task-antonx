@@ -1,8 +1,10 @@
-//
-// class SignUpUser {
-//
-//   String? name;
-//   String? error;
-//
-//   SignUpUser(this.name, this.error);
-// }
+
+class SignUpUser {
+
+  String? name;
+  String? email;
+  String? password;
+  String? confirmPassword;
+
+  SignUpUser(this.name, this.email, this.password,this.confirmPassword);
+}

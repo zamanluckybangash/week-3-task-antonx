@@ -21,17 +21,6 @@ class InputTextFormField extends StatelessWidget {
     return  Consumer<LoginViewModel>(builder: (context, model, child){
       return TextFormField(
         validator: validator,
-        // validator: (String? value){
-        //   if(model.getName.name==null || model.getName.name!.isEmpty
-        //   || model.getPassword.password==null || model.getPassword.password!.isEmpty
-        //   )
-        //   {
-        //     return 'please enter value';
-        //   }
-        //   else{
-        //     return null;
-        //   }
-        // },
         obscureText: isPasswordActive,
         onChanged: onChanged,
         decoration: InputDecoration(

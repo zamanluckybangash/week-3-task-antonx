@@ -1,7 +1,7 @@
-//
-// class LoginUser {
-//
-//   String? name;
-//   String? password;
-//   LoginUser(this.name, this.password);
-// }
+
+class LoginUser {
+
+  String? name;
+  String? password;
+  LoginUser(this.name, this.password);
+}
