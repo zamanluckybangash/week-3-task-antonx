@@ -10,7 +10,7 @@ class Plant{
   String? imageUrl;
   String? heightInfo;
   String? weatherInfo;
-  double? price;
+  int price;
   int quantity;
 
   Plant({
@@ -21,7 +21,7 @@ class Plant{
     this.imageUrl='asset/pnalnt.png',
     this.heightInfo= 'Most attractive',
     this.weatherInfo,
-    this.price = 20.0,
+    this.price = 20,
     this.quantity=1
   }
   );

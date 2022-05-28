@@ -3,6 +3,9 @@ import '../../../../core/models/plant.dart';
 
 class MyCartViewModel extends ChangeNotifier{
 
+  Plant? calculation;
+  MyCartViewModel({this.calculation});
+
   List<Plant> cartList =[];
 
   void addToList(Plant getPlant){
@@ -16,15 +19,22 @@ class MyCartViewModel extends ChangeNotifier{
     notifyListeners();
   }
 
-  double total=0.0;
+  int total=0;
   increment(Plant? plant){
     plant!.quantity=plant.quantity+1;
+    total=total+1;
     notifyListeners();
+    return total;
   }
   decrement(Plant? plant){
     if(plant!.quantity>0){
       plant.quantity = plant.quantity-1;
     }
+    if(total>0){
+      total=total-1;
+    }
     notifyListeners();
+    return total;
   }
+
 }

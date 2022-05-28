@@ -5,7 +5,7 @@ import '../../custom_widgets/custom_lover_stack.dart';
 import '../../custom_widgets/custom_tabBar.dart';
 
 class HomeScreen extends StatelessWidget {
-    int count = 0;
+    //int count = 0;
   @override
   Widget build(BuildContext context) {
     return  Material(

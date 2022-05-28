@@ -16,7 +16,7 @@ class DatabaseService {
       imageUrl:"assets/kondol5.png",
       heightInfo: 'Height',
       weatherInfo:"Humidity",
-      price:31.0,
+      price:31,
       quantity:1
       ),
     Plant(
@@ -27,7 +27,7 @@ class DatabaseService {
         imageUrl:"assets/kondol4.png",
         heightInfo: 'Height',
         weatherInfo: "Humidity",
-        price:25.0,
+        price:25,
         quantity:1
     ),
     Plant(
@@ -39,7 +39,7 @@ class DatabaseService {
         imageUrl:"assets/kondol2.jpg",
         heightInfo: 'Height',
         weatherInfo:'Humidity',
-        price:33.0,
+        price:33,
         quantity:1
     ),
   ];

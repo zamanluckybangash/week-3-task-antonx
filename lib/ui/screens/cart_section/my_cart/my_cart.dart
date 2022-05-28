@@ -4,6 +4,7 @@ import 'package:week_3_task_2_antonx/ui/custom_widgets/custom_cart_item.dart';
 import 'package:week_3_task_2_antonx/ui/screens/cart_section/my_cart/my_cart_view_model.dart';
 import 'package:week_3_task_2_antonx/ui/screens/home/home_screen.dart';
 import '../../../../core/constant/colors.dart';
+import '../../../../core/models/plant.dart';
 class MyCart extends StatelessWidget {
 
   @override
@@ -116,7 +117,7 @@ class MyCart extends StatelessWidget {
                                     fontWeight: FontWeight.w500
                                 ),
                               ),
-                              Text( '\$${(  model.cartList.length).toString()}',
+                              Text( "\$${31* model.cartList.length * model.total}",
                                 style: const TextStyle(
                                     color: darkGreenTextColor,
                                     fontSize: 15
@@ -157,7 +158,7 @@ class MyCart extends StatelessWidget {
                                     fontWeight: FontWeight.w700
                                 ),
                               ),
-                              Text("\$ ${(10.0 + model.cartList.length ).toString()}",
+                              Text("\$${10+31* model.cartList.length * model.total}",
                                 style: const TextStyle(
                                     color: darkGreenTextColor,
                                     fontSize: 15,
