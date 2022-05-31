@@ -6,7 +6,6 @@ import 'package:week_3_task_2_antonx/ui/screens/cart_section/my_cart/my_cart_vie
 import 'package:week_3_task_2_antonx/ui/screens/home/home_screen_view_model.dart';
 import 'package:week_3_task_2_antonx/ui/screens/registration_auth/login/login_screen.dart';
 import 'package:week_3_task_2_antonx/ui/screens/registration_auth/login/login_view_model.dart';
-import 'package:week_3_task_2_antonx/ui/screens/registration_auth/sign_up/sign_up_view_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
