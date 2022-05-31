@@ -20,7 +20,7 @@ void main() async {
               }),
           ChangeNotifierProvider(
               create: (_){
-                return SignUpViewModel();
+                return LoginViewModel();
               }),
           ChangeNotifierProvider(
               create: (_){
