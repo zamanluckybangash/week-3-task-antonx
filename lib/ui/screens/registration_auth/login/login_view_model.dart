@@ -1,22 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:week_3_task_2_antonx/core/models/login_user.dart';
 import '../../../../core/models/login_user.dart';
@@ -58,36 +39,3 @@ class LoginViewModel extends ChangeNotifier{
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// import 'package:flutter/cupertino.dart';
-//
-// class LoginViewModel extends ChangeNotifier{
-//
-//    // LoginUser _name = LoginUser( null,null);
-//    // LoginUser _password = LoginUser( null,null);
-//
-//    // setter
-//
-//   String? fullNameValidation(String? value) {
-//     if (value!.isEmpty) {
-//       return 'Enter Your Name';
-//     }
-//   }
-//
-//   String? passwordValidation(String? value) {
-//     if (value!.isEmpty) {
-//       return 'Enter Your Password';
-//     }
-//   }
-// }
