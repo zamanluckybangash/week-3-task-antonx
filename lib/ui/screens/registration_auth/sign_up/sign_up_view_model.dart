@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import '../../../../core/models/sign_up_user.dart';
 
 class SignUpViewModel extends ChangeNotifier{
-
+  // hello
   SignUpUser _name = SignUpUser(null,null,null,null);
   SignUpUser _email = SignUpUser(null, null,null,null);
   SignUpUser _password = SignUpUser(null, null,null,null);
