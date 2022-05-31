@@ -21,14 +21,14 @@ class MyCartViewModel extends ChangeNotifier{
 
   int total=0;
   increment(Plant? plant){
-    plant!.quantity=plant.quantity+1;
+    plant!.quantity=plant.quantity!+1;
     total=total+1;
     notifyListeners();
     return total;
   }
   decrement(Plant? plant){
-    if(plant!.quantity>0){
-      plant.quantity = plant.quantity-1;
+    if(plant!.quantity!>0){
+      plant.quantity = plant.quantity!-1;
     }
     if(total>0){
       total=total-1;

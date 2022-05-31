@@ -10,19 +10,47 @@ class Plant{
   String? imageUrl;
   String? heightInfo;
   String? weatherInfo;
-  int price;
-  int quantity;
+  num? price;
+  num? quantity;
 
   Plant({
-    this.id = 0,
-    this.title ='cute Flower',
-    this.type = 'Indoor',
-    this.description='How it is a beautiful flower',
-    this.imageUrl='asset/pnalnt.png',
-    this.heightInfo= 'Most attractive',
+    this.id ,
+    this.title,
+    this.type,
+    this.description,
+    this.imageUrl,
+    this.heightInfo,
     this.weatherInfo,
-    this.price = 20,
-    this.quantity=1
+    this.price,
+    this.quantity,
   }
   );
+
+  toJson() {
+    return {
+      'id': id,
+      'title': title,
+       'type': type,
+      'description': description,
+      'imageUrl': imageUrl,
+      'heightInfo': heightInfo,
+      'weatherInfo': weatherInfo,
+      'price': price,
+      'quantity': quantity
+    };
+  }
+
+  Plant.fromJson(json , id){
+    id = id;
+    title = json['title'] ?? "ugly flower";
+    type = json['type'] ?? "flower of the day";
+    description = json['description'] ?? "Indoor Hi Indoor hai";
+    imageUrl = json['imageUrl'] ??
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1UZyPMY3-hJzKToOonNqvBHFgSwXrMysQkQ&usqp=CAU';
+
+    heightInfo = json['heightInfo'] ?? 'Not attractive';
+    weatherInfo = json['weatherInfo'] ?? 'Nice weather';
+    price = json['price'] ?? 2022;
+    quantity = json['quantity'] ?? 1;
+  }
 }
