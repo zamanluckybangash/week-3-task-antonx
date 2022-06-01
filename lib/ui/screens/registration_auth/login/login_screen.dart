@@ -81,12 +81,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         icon: Icons.account_circle,
                         iconColor: darkGreenTextColor,
                         controller: TextEditingController(text: model.loginUserUser.name),
-                        validation: (String? val) {
+                        validation: (String? value) {
                           RegExp regex = RegExp(r'^.{3,}$');
-                          if(val == null || val == ""){
+                          if(value == null || value == ""){
                             return "full name can't be null";
                           }
-                          if (!regex.hasMatch(val)) {
+                          if (!regex.hasMatch(value)) {
                             return ("Enter Valid name(Min. 3 Character)");
                           }
                           else{
