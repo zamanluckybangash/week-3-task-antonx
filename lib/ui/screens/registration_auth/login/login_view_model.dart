@@ -1,17 +1,21 @@
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:week_3_task_2_antonx/core/models/login_user.dart';
 import '../../../../core/models/login_user.dart';
+import '../../../../core/services/auth_services.dart';
 
 class LoginViewModel extends ChangeNotifier{
 
-  LoginUser loginUserUser = LoginUser();
-  // setter
+  LoginUser loginUser = LoginUser();
+  final _authService = AuthService();
 
-  void changeName(String value){
-    notifyListeners();
-  }
-  void changePassword(String value){
-    notifyListeners();
-  }
+  loginWithEmailPassword(context) async {
+    loginUser = await _authService.signIn(
+        loginUser.email,
+        loginUser.password,
+        context
+    );
 
+  }
 }

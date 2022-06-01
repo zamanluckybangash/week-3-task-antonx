@@ -24,7 +24,7 @@ class InputTextFormField extends StatelessWidget {
         validator: validation,
         obscureText: isPasswordActive,
         onChanged: onChanged,
-        controller: controller,
+        controller: controller ?? TextEditingController(),
         decoration: InputDecoration(
             prefixIcon: Icon(
               icon,

@@ -160,7 +160,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               controller: TextEditingController(text: model.signUpUser.confirmPassword),
                               validation: (String? value){
                                 if(value==null || value==""){
-                                  return "confirm password error";
+                                  return "confirm password required for signUp";
                                 }
                                 if (model.signUpUser.password !=model.signUpUser.confirmPassword) {
                                   return "Password don't match";

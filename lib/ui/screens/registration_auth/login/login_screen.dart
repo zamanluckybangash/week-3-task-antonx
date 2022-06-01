@@ -76,25 +76,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     Padding(
                       padding: const EdgeInsets.only(top: 40,left: 15,right: 15),
                       child: InputTextFormField(
-                        hintText: "Full name",
+                        hintText: "Email",
                         //errorText: loginViewModel.getName.error,
                         icon: Icons.account_circle,
                         iconColor: darkGreenTextColor,
-                        controller: TextEditingController(text: model.loginUserUser.name),
+                        controller: TextEditingController(text: model.loginUser.email),
                         validation: (String? value) {
-                          RegExp regex = RegExp(r'^.{3,}$');
-                          if(value == null || value == ""){
-                            return "full name can't be null";
-                          }
-                          if (!regex.hasMatch(value)) {
-                            return ("Enter Valid name(Min. 3 Character)");
+                          if(value==null || value==""){
+                            return "Enter email";
+                          }if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
+                            return ("Please Enter a valid email");
                           }
                           else{
                             return null;
                           }
                         },
                         onChanged: (String value){
-                          model.loginUserUser.name=value;
+                          model.loginUser.email=value;
                         },
                       ),
                     ),
@@ -106,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         icon: Icons.lock,
                         isPasswordActive: true,
                         iconColor: darkGreenTextColor,
-                        controller: TextEditingController(text: model.loginUserUser.password),
+                        controller: TextEditingController(text: model.loginUser.password),
                         validation: (String? value){
                           RegExp regex = RegExp(r'^.{6,}$');
                           if(value == null || value == ""){
@@ -120,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                         },
                         onChanged: (String value){
-                          model.loginUserUser.password=value;
+                          model.loginUser.password=value;
                         },
                       ),
                     ),
@@ -156,13 +154,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         child:  RoundedRectangularButton(
                             text: 'Login',
                             buttonColor: darkGreenTextColor,
-                            onPressed: () {
+                            onPressed: () async {
                               debugPrint("login click");
                               if(formKey.currentState!.validate()){
                                 debugPrint("valid");
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return HomeScreen();
-                                }));
+                                await model.loginWithEmailPassword(context);
                               }
                             }
                         )
