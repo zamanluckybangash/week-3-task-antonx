@@ -84,9 +84,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 hintText: 'Full name',
                                 icon: Icons.account_circle,
                                 iconColor: darkGreenTextColor,
-                                validator: model.fullNameValidator,
+                                controller: TextEditingController(text: model.signUpUser.name),
+                                validation:(String? value){
+
+                                  RegExp regex = RegExp(r'^.{3,}$');
+                                  if(value ==null || value==""){
+                                    return "full name can't be null";
+                                  }
+                                  if (!regex.hasMatch(value)) {
+                                    return ("Enter Valid name(Min. 3 Character)");
+                                  }
+                                  else{
+                                    return null;
+                                  }
+                                },
                                 onChanged: (String value){
-                                  model.changeName(value);
+                                  model.signUpUser.name=value;
                                 },
                               )
                           ),
@@ -96,9 +109,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 hintText: 'mzamanshah@gmail.com',
                                 icon: Icons.email,
                                 iconColor: darkGreenTextColor,
-                                validator: model.emailValidation,
+                                controller: TextEditingController(text: model.signUpUser.email),
+                                validation:(String? value){
+                                  if(value==null || value==""){
+                                    return "email error";
+                                  }if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
+                                    return ("Please Enter a valid email");
+                                  }
+                                  else{
+                                    return null;
+                                  }
+                                },
                                 onChanged: (String value){
-                                  model.changeEmail(value);
+                                  model.signUpUser.email=value;
                                 },
                               )
                           ),
@@ -109,9 +132,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 isPasswordActive: true,
                                 icon: Icons.lock,
                                 iconColor: darkGreenTextColor,
-                                validator: model.passwordValidation,
+                                controller: TextEditingController(text: model.signUpUser.password),
+                                validation: (String? value){
+                                  RegExp regex = RegExp(r'^.{6,}$');
+                                  if(value==null || value==""){
+                                    return "Password is required for signUp";
+                                  }
+                                  if (!regex.hasMatch(value)) {
+                                    return ("Enter Valid Password(Min. 6 Character)");
+                                  }
+                                  else{
+                                    return null;
+                                  }
+                                },
                                 onChanged: (String value){
-                                  model.changePassword(value);
+                                  model.signUpUser.password=value;
                                 },
                               )
                           ),
@@ -122,9 +157,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               isPasswordActive: true,
                               icon: Icons.lock,
                               iconColor: darkGreenTextColor,
-                              validator: model.conPasswordValidation,
+                              controller: TextEditingController(text: model.signUpUser.confirmPassword),
+                              validation: (String? value){
+                                if(value==null || value==""){
+                                  return "confirm password error";
+                                }
+                                if (model.signUpUser.password !=model.signUpUser.confirmPassword) {
+                                  return "Password don't match";
+                                }
+                                else{
+                                  return null;
+                                }
+                              },
                               onChanged: (String value){
-                                model.changeConfirmPassword(value);
+                                model.signUpUser.confirmPassword=value;
                               },
                             ),
                           ),

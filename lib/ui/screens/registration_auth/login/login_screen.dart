@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:week_3_task_2_antonx/ui/screens/registration_auth/login/login_view_model.dart';
 import '../../../../core/constant/colors.dart';
+import '../../../../core/models/login_user.dart';
 import '../../../custom_widgets/input_text_form_field.dart';
 import '../../../custom_widgets/my_custom_clipper.dart';
 import '../../../custom_widgets/rounded_rectangular_button.dart';
@@ -79,10 +80,22 @@ class _LoginScreenState extends State<LoginScreen> {
                         //errorText: loginViewModel.getName.error,
                         icon: Icons.account_circle,
                         iconColor: darkGreenTextColor,
-                        onChanged: (String value){
-                          model.changeName(value);
+                        controller: TextEditingController(text: model.loginUserUser.name),
+                        validation: (String? val) {
+                          RegExp regex = RegExp(r'^.{3,}$');
+                          if(val == null || val == ""){
+                            return "full name can't be null";
+                          }
+                          if (!regex.hasMatch(val)) {
+                            return ("Enter Valid name(Min. 3 Character)");
+                          }
+                          else{
+                            return null;
+                          }
                         },
-                        validator: model.fullNameValidator,
+                        onChanged: (String value){
+                          model.loginUserUser.name=value;
+                        },
                       ),
                     ),
                     Padding(
@@ -92,10 +105,22 @@ class _LoginScreenState extends State<LoginScreen> {
                         //errorText: loginViewModel.getPassword.error,
                         icon: Icons.lock,
                         isPasswordActive: true,
-                        validator: model.passwordNameValidator,
                         iconColor: darkGreenTextColor,
+                        controller: TextEditingController(text: model.loginUserUser.password),
+                        validation: (String? value){
+                          RegExp regex = RegExp(r'^.{6,}$');
+                          if(value == null || value == ""){
+                            return "Password is required for login";
+                          }
+                          if (!regex.hasMatch(value)) {
+                            return ("Enter Valid Password(Min. 6 Character)");
+                          }
+                          else{
+                            return null;
+                          }
+                        },
                         onChanged: (String value){
-                          model.changePassword(value);
+                          model.loginUserUser.password=value;
                         },
                       ),
                     ),

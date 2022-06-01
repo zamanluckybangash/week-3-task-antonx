@@ -10,19 +10,21 @@ class InputTextFormField extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
   final Function(String)? onChanged;
-  final String? Function(String?)? validator;
+  final String? Function(String?)? validation;
+  final TextEditingController? controller;
  // final String? errorText;
 
   InputTextFormField({required this.hintText,  this.isPasswordActive=false, required this.icon,
-                       required this.iconColor,this.onChanged,this.validator});
+                       required this.iconColor,this.onChanged,this.validation,this.controller});
 
   @override
   Widget build(BuildContext context) {
     return  Consumer<LoginViewModel>(builder: (context, model, child){
       return TextFormField(
-        validator: validator,
+        validator: validation,
         obscureText: isPasswordActive,
         onChanged: onChanged,
+        controller: controller,
         decoration: InputDecoration(
             prefixIcon: Icon(
               icon,
