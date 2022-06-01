@@ -96,7 +96,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         validator: model.passwordNameValidator,
                         iconColor: darkGreenTextColor,
                         onChanged: (String value){
-                          //loginViewModel.changePassword(value);
                           model.changePassword(value);
                         },
                       ),
@@ -142,17 +141,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                   return HomeScreen();
                                 }));
                               }
-                              // print("Hello1");
-                              // if(!loginViewModel.isValid){
-                              //   print("Hello2");
-                              //   return null;
-                              // }
-                              // else{
-                              //   print("Hello3");
-                              //   Navigator.push(context, MaterialPageRoute(builder: (context){
-                              //     return HomeScreen();
-                              //   }));
-                              // }
                             }
                         )
                     ),
@@ -172,14 +160,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               Navigator.push(context, MaterialPageRoute(builder: (context){
                                 return SignUpScreen();
                               }));
-                              // if(!loginViewModel.isValid){
-                              //    Navigator.push(context, MaterialPageRoute(builder: (context){
-                              //     return SignUpScreen();
-                              //   }));
-                              // }
-                              // else{
-                              //    false;
-                              // }
 
                             },
                             child: const Text('Sign up',

@@ -18,11 +18,9 @@ class LoginViewModel extends ChangeNotifier{
     notifyListeners();
   }
 
-
   // getter
-  //LoginUser get getName =>_name;
-  //LoginUser get getPassword => _password;
 
+  //LoginUser get getName =>_name;
   String? fullNameValidator(val){
     if(val == null || val == ""){
       return "full name error";
@@ -30,6 +28,7 @@ class LoginViewModel extends ChangeNotifier{
       return null;
     }
   }
+  //LoginUser get getPassword => _password;
   String? passwordNameValidator(val){
     if(val == null || val == ""){
       return "password error";
