@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import '../../../../core/models/sign_up_user.dart';
-
+// khan saab
 class SignUpViewModel extends ChangeNotifier{
   SignUpUser _name = SignUpUser(null,null,null,null);
   SignUpUser _email = SignUpUser(null, null,null,null);
