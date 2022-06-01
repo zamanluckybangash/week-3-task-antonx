@@ -1,47 +1,52 @@
 import 'package:flutter/cupertino.dart';
 import '../../../../core/models/sign_up_user.dart';
-
+//khan
 class SignUpViewModel extends ChangeNotifier{
-  SignUpUser _name = SignUpUser(null,null,null,null);
-  SignUpUser _email = SignUpUser(null, null,null,null);
-  SignUpUser _password = SignUpUser(null, null,null,null);
-  SignUpUser _confirmPassword = SignUpUser(null, null,null,null);
 
   void changeName(String value){
-    _name = SignUpUser(value, null,null,null);
     notifyListeners();
   }
   void changeEmail(String value){
-    _email = SignUpUser(null, value,null,null);
     notifyListeners();
   }
   void changePassword(String value){
-    _password = SignUpUser(null, null,value,null);
     notifyListeners();
   }
   void changeConfirmPassword(String value){
-    _confirmPassword = SignUpUser(null, null,null,value);
     notifyListeners();
   }
 
   String? fullNameValidator(val){
+    RegExp regex = RegExp(r'^.{3,}$');
     if(val==null || val==""){
       return "full name error";
-    }else{
+    }
+    if (!regex.hasMatch(val)) {
+      return ("Enter Valid name(Min. 3 Character)");
+    }
+    else{
       return null;
     }
   }
   String? emailValidation(val){
     if(val==null || val==""){
       return "email error";
-    }else{
+    }if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(val)) {
+      return ("Please Enter a valid email");
+    }
+    else{
       return null;
     }
   }
   String? passwordValidation(val){
+    RegExp regex = RegExp(r'^.{6,}$');
     if(val==null || val==""){
-      return "password error";
-    }else{
+      return "Password is required for login";
+    }
+    if (!regex.hasMatch(val)) {
+      return ("Enter Valid Password(Min. 6 Character)");
+    }
+    else{
       return null;
     }
   }

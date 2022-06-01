@@ -79,11 +79,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         //errorText: loginViewModel.getName.error,
                         icon: Icons.account_circle,
                         iconColor: darkGreenTextColor,
-                        validator: model.fullNameValidator,
                         onChanged: (String value){
-                          //loginViewModel.changeName(value);
                           model.changeName(value);
                         },
+                        validator: model.fullNameValidator,
                       ),
                     ),
                     Padding(
@@ -133,10 +132,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             text: 'Login',
                             buttonColor: darkGreenTextColor,
                             onPressed: () {
-                              print("login click");
+                              debugPrint("login click");
                               if(formKey.currentState!.validate()){
-                                print("valid");
-
+                                debugPrint("valid");
                                 Navigator.push(context, MaterialPageRoute(builder: (context){
                                   return HomeScreen();
                                 }));
