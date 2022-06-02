@@ -16,6 +16,5 @@ class LoginViewModel extends ChangeNotifier{
         loginUser.password,
         context
     );
-
   }
 }

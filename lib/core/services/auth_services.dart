@@ -19,16 +19,15 @@ class AuthService {
   // }
 
   // login function
-  signIn(String? email, String? password,BuildContext context) async {
+  signIn(String? email, String? password,context) async {
       try {
-        await _auth
-            .signInWithEmailAndPassword(email: email!, password: password!)
-            .then((uid) {
+        await _auth.signInWithEmailAndPassword(email: email!, password: password!).then((uid) {
           Fluttertoast.showToast(msg: "Login Successful");
           Navigator.push(context, MaterialPageRoute(builder: (context){
             return HomeScreen();
           }));
-        });
+        }
+        );
       } catch (e) {
         Fluttertoast.showToast(msg: e.toString());
       }
