@@ -218,11 +218,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               padding: const EdgeInsets.only(left: 15,right: 15,top: 130),
                               child:  RoundedRectangularButton(
                                   text: 'Sign Up',
-                                  onPressed: (){
+                                  onPressed: () async{
                                     if(formKey.currentState!.validate()){
-                                      return Navigator.push(context, MaterialPageRoute(builder: (context){
-                                        return HomeScreen();
-                                      }));
+                                      await model.signUPWithEmailPassword(context);
                                     }
                                   },
                                   buttonColor: darkGreenTextColor)
