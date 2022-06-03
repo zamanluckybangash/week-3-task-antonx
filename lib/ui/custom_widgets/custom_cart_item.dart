@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../core/constant/colors.dart';
 import '../../core/models/plant.dart';
+import '../screens/cart_section/cart/cart_view_model.dart';
 import '../screens/cart_section/my_cart/my_cart_view_model.dart';
 import 'custom_counter_cart_items.dart';
 
@@ -16,7 +17,7 @@ class CustomCartItem extends StatelessWidget {
   Widget build(BuildContext context) {
 
     MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
-    return Consumer<MyCartViewModel>(builder: (context,model,child){
+    return Consumer<CartViewModel>(builder: (context,model,child){
 
       return Container(
           height: 90,

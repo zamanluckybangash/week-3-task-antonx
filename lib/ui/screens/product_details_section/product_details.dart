@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:week_3_task_2_antonx/ui/screens/cart_section/cart/cart_view_model.dart';
 import 'package:week_3_task_2_antonx/ui/screens/cart_section/my_cart/my_cart.dart';
 import 'package:week_3_task_2_antonx/ui/screens/cart_section/my_cart/my_cart_view_model.dart';
 import 'package:week_3_task_2_antonx/ui/screens/home/home_screen_view_model.dart';
@@ -19,7 +20,8 @@ class ProductDetail extends StatelessWidget {
   Widget build(BuildContext context) {
 
     MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
-    return Material(
+    return Consumer<CartViewModel>(builder: (context , model , child){
+      return Material(
         child:  Container(
           color: curveColor,
           child: Stack(
@@ -297,6 +299,14 @@ class ProductDetail extends StatelessWidget {
                                               padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15))
                                           ),
                                           onPressed: (){
+                                            model.getCart(
+                                                cartId :productDetailPlant?.id,
+                                              imageUrl: productDetailPlant?.imageUrl,
+                                              info: productDetailPlant?.description,
+                                              name: productDetailPlant?.type,
+                                              quantity: productDetailPlant?.quantity,
+
+                                            );
                                             myCartViewModel.addToList(productDetailPlant!);
                                             Navigator.push(context, MaterialPageRoute(builder: (context){
                                               return MyCart();
@@ -363,5 +373,6 @@ class ProductDetail extends StatelessWidget {
         ),
 
       );
+    });
   }
 }

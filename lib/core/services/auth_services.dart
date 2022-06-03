@@ -9,15 +9,11 @@ import '../../ui/screens/home/home_screen.dart';
 
 
 class AuthService {
-  //final _dbService = DatabaseService();
 
   final _auth = FirebaseAuth.instance;
+  FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
-  User? user;
-
-  // AuthService(){
-  //   signIn(email, password, context);
-  // }
+  //User? user;
 
   // login function
   signIn(String? email, String? password, context) async {
@@ -36,16 +32,13 @@ class AuthService {
   signUp(SignUpUser signUpUser,context) async {
     try{
       await _auth.createUserWithEmailAndPassword(email: signUpUser.email!, password: signUpUser.password!).then((auth) {
-       // postDetailsToFirestore(signUpUser);
         User? user = _auth.currentUser;
-        //SignUpUser signUpUser = SignUpUser();
-        signUpUser.email = user!.email;
-        signUpUser.id = user.uid;
-        signUpUser.name = signUpUser.name;
-        signUpUser.password = signUpUser.password;
+        // signUpUser.email = user!.email;
+        // signUpUser.id = user.uid;
+        // signUpUser.name = signUpUser.name;
+        // signUpUser.password = signUpUser.password;
 
-        FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-        firebaseFirestore.collection("users").doc(user.uid).set(signUpUser.toJson());
+        firebaseFirestore.collection("users").doc(user?.uid).set(signUpUser.toJson());
         Fluttertoast.showToast(msg: "Account created successfully :) ");
         Navigator.push(context, MaterialPageRoute(builder: (context){
           return HomeScreen();
