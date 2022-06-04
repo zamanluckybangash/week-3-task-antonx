@@ -11,7 +11,7 @@ class LoginViewModel extends ChangeNotifier{
   final _authService = AuthService();
 
   loginWithEmailPassword(context) async {
-    loginUser = await _authService.signIn(
+    await _authService.signIn(
         loginUser.email,
         loginUser.password,
         context

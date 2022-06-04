@@ -13,7 +13,7 @@ class CartModel {
       'CartId': cartId,
       'imgUrl': imageUrl,
       'shortInfo': info,
-      'title': name,
+      'name': name,
       'quantity': quantity,
     };
   }

@@ -16,10 +16,6 @@ void main() async {
         providers: [
           ChangeNotifierProvider(
               create: (_){
-                return MyCartViewModel();
-              }),
-          ChangeNotifierProvider(
-              create: (_){
                 return LoginViewModel();
               }),
           ChangeNotifierProvider(

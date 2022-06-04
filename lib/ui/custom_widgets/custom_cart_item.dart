@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:week_3_task_2_antonx/core/models/cart.dart';
 import '../../core/constant/colors.dart';
-import '../../core/models/plant.dart';
 import '../screens/cart_section/cart/cart_view_model.dart';
-import '../screens/cart_section/my_cart/my_cart_view_model.dart';
 import 'custom_counter_cart_items.dart';
 
 class CustomCartItem extends StatelessWidget {
 
-  Plant? CustomCartItemPlant;
+  // Plant? CustomCartItemPlant;
+  // int? CustomCartItemId;
+  // //
+  // CustomCartItem({this.CustomCartItemPlant, this.CustomCartItemId});
+  CartModel? CustomCartItemPlant;
   int? CustomCartItemId;
   //
   CustomCartItem({this.CustomCartItemPlant, this.CustomCartItemId});
@@ -16,7 +19,7 @@ class CustomCartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
+    //MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
     return Consumer<CartViewModel>(builder: (context,model,child){
 
       return Container(
@@ -30,7 +33,7 @@ class CustomCartItem extends StatelessWidget {
                 height: 70,
                 width: 70,
                 decoration: BoxDecoration(
-                  color: smallFlowerbackgroundColor,
+                  color: curveColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Image.asset("${CustomCartItemPlant?.imageUrl}"),
@@ -42,7 +45,8 @@ class CustomCartItem extends StatelessWidget {
                   children:   [
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
-                      child: Text("${CustomCartItemPlant?.type}",
+                      // child: Text("${CustomCartItemPlant?.type}",
+                      child: Text("${CustomCartItemPlant?.name}",
                         style: const TextStyle(
                             color: darkGreenTextColor,
                             fontWeight: FontWeight.w700
@@ -74,7 +78,8 @@ class CustomCartItem extends StatelessWidget {
                         (String value) {
                       return DropdownMenuItem<String>(
                         onTap: () {
-                          myCartViewModel.remove(CustomCartItemId);
+                          //model.remove(CustomCartItemId);
+                          model.deleteCar(CustomCartItemPlant!.cartId!, CustomCartItemId!);
                         },
                         value: value,
                         child: Row(

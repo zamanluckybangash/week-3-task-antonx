@@ -1,22 +1,25 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:week_3_task_2_antonx/core/models/cart.dart';
 import 'package:week_3_task_2_antonx/core/view_models/base_view_model.dart';
 
 import '../../core/constant/colors.dart';
 import '../../core/models/plant.dart';
+import '../screens/cart_section/cart/cart_view_model.dart';
 import '../screens/cart_section/my_cart/my_cart_view_model.dart';
 
 class  CustomCounterCartItem extends StatelessWidget {
-  Plant? CustomCartItemPlant;
-
-  CustomCounterCartItem({Key? key,this.CustomCartItemPlant}) : super(key: key);
+  //Plant? CustomCartItemPlant;
+  CartModel? CustomCartItemPlant;
+  int? id;
+  CustomCounterCartItem({Key? key,this.CustomCartItemPlant, this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     //MyCartViewModel myCartViewModel = context.watch<MyCartViewModel>();
     //int count=myCartViewModel.count;
-    return Consumer<MyCartViewModel>(builder: (context , model , child){
+    return Consumer<CartViewModel>(builder: (context , model , child){
       return Container(
         // color: Colors.red,
         height: 32,
@@ -51,6 +54,7 @@ class  CustomCounterCartItem extends StatelessWidget {
                 child: IconButton(
                     onPressed: (){
                       model.increment(CustomCartItemPlant);
+                      model.incrementQuantity(id);
                     },
                     icon:  Container(
                       height: 50,
