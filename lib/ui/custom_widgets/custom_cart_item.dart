@@ -6,12 +6,8 @@ import '../screens/cart_section/cart/cart_view_model.dart';
 import 'custom_counter_cart_items.dart';
 
 class CustomCartItem extends StatelessWidget {
-
-  // Plant? CustomCartItemPlant;
-  // int? CustomCartItemId;
-  // //
-  // CustomCartItem({this.CustomCartItemPlant, this.CustomCartItemId});
   CartModel? CustomCartItemPlant;
+
   int? CustomCartItemId;
   //
   CustomCartItem({this.CustomCartItemPlant, this.CustomCartItemId});

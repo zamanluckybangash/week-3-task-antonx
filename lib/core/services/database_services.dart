@@ -98,12 +98,7 @@ class DatabaseService {
       debugPrint(e.toString());
     }
   }
-  // for FieldValue
-  /// Sentinel values that can be used when writing document fields with set() or
-  /// update().
-  // for increment which is buidin function
-  /// Returns a special value for use with set() or update() that tells the
-  /// server to increment the field’s current value by the given value.
+
   Future<void> increment(cartId) async {
     String _userUid = getUserId();
     await _firebaseFirestore.collection('carts').doc(_userUid).collection('UserSelectedCart')
